@@ -10,22 +10,73 @@
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="bg-yellow-center">
-    <main class="card">
-      <img src="./assets/images/illustration-article.svg" alt="Article illustration" class="card__image">
-      <div class="card__content">
-        <span class="card__tag">Learning</span>
-        <p class="card__date">Published 21 Dec 2023</p>
-        <h1 class="card__title">HTML &amp; CSS foundations</h1>
-        <p class="card__desc">
-          These languages are the backbone of every website, defining structure, content, and presentation.
-        </p>
-        <div class="card__author">
-          <img src="./assets/images/image-avatar.webp" alt="Greg Hooper" class="card__avatar">
-          <span class="card__author-name">Greg Hooper</span>
+  <div class="container">
+    <div class="bg-yellow-center">
+      <main class="card">
+        <img src="./assets/images/illustration-article.svg" alt="Article illustration" class="card__image">
+        <div class="card__content">
+          <span class="card__tag">Learning</span>
+          <p class="card__date">Published 21 Dec 2023</p>
+          <h1 class="card__title">HTML &amp; CSS foundations</h1>
+          <p class="card__desc">
+            These languages are the backbone of every website, defining structure, content, and presentation.
+          </p>
+          <div class="card__author">
+            <img src="./assets/images/image-avatar.webp" alt="Greg Hooper" class="card__avatar">
+            <span class="card__author-name">Greg Hooper</span>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
+
+  <div class="bg-decor">
+    <div class="bg-decor__grid">
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+      <div class="bg-decor__dot"></div>
+    </div>
+  </div>
+
+  <div class="bg-decor-blue">
+    <div class="bg-decor-blue__grid">
+      <!-- 12 chấm tròn xanh dương, 2 hàng 6 cột -->
+      <div class="bg-decor-blue__dot"></div>
+      <div class="bg-decor-blue__dot"></div>
+      <div class="bg-decor-blue__dot"></div>
+      <div class="bg-decor-blue__dot"></div>
+      <div class="bg-decor-blue__dot"></div>
+      <div class="bg-decor-blue__dot"></div>
+      <div class="bg-decor-blue__dot"></div>
+      <div class="bg-decor-blue__dot"></div>
+      <div class="bg-decor-blue__dot"></div>
+      <div class="bg-decor-blue__dot"></div>
+      <div class="bg-decor-blue__dot"></div>
+      <div class="bg-decor-blue__dot"></div>
+    </div>
   </div>
 </body>
 </html>
@@ -36,6 +87,18 @@ body {
   min-height: 100vh;
   font-family: 'Figtree', sans-serif;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100vw;
+  max-width: 1440px;    /* Giới hạn chiều rộng desktop */
+  min-height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -160,30 +223,100 @@ body {
     font-size: 15px;
   }
 }
+
 body::before {
-  content: '';
-  position: absolute;
-  top: 20px; /* Điều chỉnh vị trí */
-  left: 20px; /* Điều chỉnh vị trí */
-  width: 60px; /* Kích thước hình tròn */
-  height: 60px;
-  background-color: #ffe6e6; /* Màu hồng nhạt */
-  border-radius: 50%;
-  /* Thêm các chấm nhỏ bên trong hình tròn bằng box-shadow nếu muốn */
-  box-shadow: 10px 10px 0 0 #fff, 20px 20px 0 0 #fff; /* Ví dụ các chấm trắng */
-  z-index: -1; /* Đảm bảo nó nằm phía sau nội dung chính */
+  content: none; /* Xóa hình tròn cũ */
+}
+
+/* Trang trí nền với 18 chấm tròn xếp 6 hàng 3 cột */
+.bg-decor {
+  position: absolute;              /* Định vị tuyệt đối trên toàn màn hình */
+  top: -315px;                     /* Dịch lên trên để căn chỉnh vị trí */
+  left: -330px;                    /* Dịch sang trái để căn chỉnh vị trí */
+  right: 0;                        /* Bám sát cạnh phải */
+  bottom: 0;                       /* Bám sát cạnh dưới */
+  width: 100vw;                    /* Chiều rộng toàn màn hình */
+  height: 100vh;                   /* Chiều cao toàn màn hình */
+  pointer-events: none;            /* Không ảnh hưởng đến thao tác chuột */
+  z-index: -1;                      /* Đặt dưới các phần tử khác */
+  display: flex;                   /* Sử dụng flexbox để căn giữa */
+  justify-content: center;         /* Căn giữa theo chiều ngang */
+  align-items: center;             /* Căn giữa theo chiều dọc */
+}
+
+/* Lưới 9 hàng 3 cột cho các chấm tròn */
+.bg-decor__grid {
+  display: grid;                                   /* Sử dụng grid layout */
+  grid-template-columns: repeat(3, 1fr);           /* 3 cột bằng nhau */
+  grid-template-rows: repeat(9, 1fr);              /* 9 hàng bằng nhau */
+  gap: 5px 5px;                                  /* Khoảng cách giữa các chấm */
+}
+
+/* Định dạng từng chấm tròn */
+.bg-decor__dot {
+  width: 15px;                     /* Đường kính chấm */
+  height: 15px;                    /* Đường kính chấm */
+  background-color: #f4aeae;       /* Màu nền chấm */
+  border-radius: 50%;              /* Bo tròn thành hình tròn */
+
+}
+
+/* Trang trí thêm 12 chấm tròn xanh dương xếp 2 hàng 6 cột */
+.bg-decor-blue {
+  position: absolute;              /* Định vị tuyệt đối trên toàn màn hình */
+  top: 675px;                       /* Điều chỉnh vị trí xuống dưới */
+  left: 200px;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 2;                      /* Trên lớp chấm màu hồng */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Lưới 2 hàng 6 cột cho các chấm tròn xanh dương */
+.bg-decor-blue__grid {
+  display: grid;                                   /* Sử dụng grid layout */
+  grid-template-columns: repeat(6, 1fr);           /* 6 cột bằng nhau */
+  grid-template-rows: repeat(2, 1fr);              /* 2 hàng bằng nhau */
+  gap: 10px 10px;                                    /* Khoảng cách giữa các chấm */
+}
+
+/* Định dạng từng chấm tròn xanh dương */
+.bg-decor-blue__dot {
+  width: 15px;                     /* Đường kính chấm */
+  height: 15px;                    /* Đường kính chấm */
+  background-color: #3b82f6;       /* Màu xanh dương */
+  border-radius: 50%;              /* Bo tròn thành hình tròn */
+  opacity: 0.8;                    /* Độ mờ */
 }
 
 /* Một đường kẻ nhỏ ở phía dưới bên trái */
 body::after {
   content: '';
   position: absolute;
-  bottom: 30px; /* Điều chỉnh vị trí */
+  bottom: 0px; /* Điều chỉnh vị trí */
   left: 50px; /* Điều chỉnh vị trí */
-  width: 40px;
-  height: 4px; /* Độ dày đường kẻ */
-  background-color: #add8e6; /* Màu xanh nhạt */
+  width: 80px;
+  height: 10px; /* Độ dày đường kẻ */
+  background-color: #33778e; /* Màu xanh nhạt */
   transform: rotate(-30deg); /* Xoay đường kẻ */
   z-index: -1;
+  border-radius: 12px 12px 0 0; /* Bo tròn đầu trên */
+}
+
+/* Đường kẻ thẳng đứng, dài hơn 50% */
+body::before {
+  content: '';
+  position: absolute;
+  left: 180px;         /* Điều chỉnh vị trí ngang */
+  bottom: -30px;           /* Bắt đầu từ dưới */
+  width: 12px;         /* Độ dày đường kẻ */
+  height: 120px;       /* Dài hơn 50% so với đường kẻ ngang */
+  background-color: #1c7a99; /* Màu xanh nhạt */
+  z-index: -1;
+  transform: rotate(10deg); /* Xoay đường kẻ */
+  border-radius: 12px 12px 0 0; /* Bo tròn đầu trên */
 }
 </style>
