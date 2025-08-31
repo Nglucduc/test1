@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Blog preview card</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="bg-yellow-center">
+    <main class="card">
+      <img src="./assets/images/illustration-article.svg" alt="Article illustration" class="card__image">
+      <div class="card__content">
+        <span class="card__tag">Learning</span>
+        <p class="card__date">Published 21 Dec 2023</p>
+        <h1 class="card__title">HTML &amp; CSS foundations</h1>
+        <p class="card__desc">
+          These languages are the backbone of every website, defining structure, content, and presentation.
+        </p>
+        <div class="card__author">
+          <img src="./assets/images/image-avatar.webp" alt="Greg Hooper" class="card__avatar">
+          <span class="card__author-name">Greg Hooper</span>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
+
+<style>
+body {
+  background: hsl(0, 0%, 100%);
+  min-height: 100vh;
+  font-family: 'Figtree', sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-yellow-center {
+  background: hsl(47, 88%, 63%);
+  width: 70vw;
+  height: 70vh;
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Bóng mờ đậm hơn 50% */
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.18), 0 1.5px 8px 0 rgba(0,0,0,0.36);
+}
+
+/* Giảm chiều cao 20%, tăng độ rộng 50% cho .card */
+.card {
+  background: hsl(0, 0%, 100%);
+  border-radius: 20px;
+  box-shadow: 8px 8px 0 0 hsl(0, 0%, 7%);
+  max-width: 250px; /* tăng 50% từ 192px */
+  width: 75%;       /* tăng 50% từ 50% */
+  height: 50vh;     /* giảm 20% từ 50vh (nếu muốn cố định chiều cao) */
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border: 1.5px solid hsl(0, 0%, 7%);
+  justify-content: center;
+}
+
+.card__image {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  margin-top: 10px; /* Dịch chuyển ảnh xuống dưới một chút */
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Đẩy nội dung lên trên */
+  flex: 1;
+  margin-top: -30px; /* Kéo toàn bộ phần chữ cao lên một chút */
+}
+
+.card__tag {
+  background: hsl(47, 88%, 63%);
+  color: hsl(0, 0%, 7%);
+  font-weight: 800;
+  font-size: 14px;
+  padding: 2px 8px;      /* Thu nhỏ vùng nền vàng */
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 12px;
+  width: fit-content;     /* Chỉ bôi màu quanh chữ */
+  box-shadow: none;      /* Không kéo dài */
+}
+
+.card__date {
+  color: hsl(0, 0%, 7%);
+  font-size: 14px;
+  margin: 0 0 12px 0;
+}
+
+.card__title {
+  font-size: 18px;
+  font-weight: 800;
+  color: hsl(0, 0%, 7%);
+  margin: 0 0 12px 0;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.card__title:hover {
+  color: hsl(47, 88%, 63%);
+}
+
+.card__desc {
+  color: hsl(0, 0%, 42%);
+  font-size: 14px;
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+}
+
+.card__author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.card__avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid hsl(0, 0%, 7%);
+}
+
+.card__author-name {
+  font-weight: 800;
+  color: hsl(0, 0%, 7%);
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .bg-yellow-center {
+    width: 98vw;
+    height: auto;
+    min-height: 90vh;
+    border-radius: 0;
+    padding: 8px 0;
+  }
+  .card {
+    max-width: 90vw;
+    width: 90vw;
+    padding: 12px;
+    height: auto;
+  }
+  .card__title {
+    font-size: 15px;
+  }
+}
+body::before {
+  content: '';
+  position: absolute;
+  top: 20px; /* Điều chỉnh vị trí */
+  left: 20px; /* Điều chỉnh vị trí */
+  width: 60px; /* Kích thước hình tròn */
+  height: 60px;
+  background-color: #ffe6e6; /* Màu hồng nhạt */
+  border-radius: 50%;
+  /* Thêm các chấm nhỏ bên trong hình tròn bằng box-shadow nếu muốn */
+  box-shadow: 10px 10px 0 0 #fff, 20px 20px 0 0 #fff; /* Ví dụ các chấm trắng */
+  z-index: -1; /* Đảm bảo nó nằm phía sau nội dung chính */
+}
+
+/* Một đường kẻ nhỏ ở phía dưới bên trái */
+body::after {
+  content: '';
+  position: absolute;
+  bottom: 30px; /* Điều chỉnh vị trí */
+  left: 50px; /* Điều chỉnh vị trí */
+  width: 40px;
+  height: 4px; /* Độ dày đường kẻ */
+  background-color: #add8e6; /* Màu xanh nhạt */
+  transform: rotate(-30deg); /* Xoay đường kẻ */
+  z-index: -1;
+}
+</style>
